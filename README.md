@@ -6,6 +6,7 @@ Prediction gene expression based on chromain modification or transcription facto
 Usage: Rscript PGE.R -h
 
 Options:
+
 	-b CHARACTER, --bams=CHARACTER
 		Input bam files directory
 
