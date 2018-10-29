@@ -1,7 +1,7 @@
 # Plant Gene Expression Prediction
 
 
-Function: This script is to predicte gene expression level based on chromain modification or transcription factor binding infomation. It was written by purely R.
+Function: This script is to predicte gene expression level based on chromain modification or transcription factor binding infomation. It was purely written by R.
 
 Dependence: 	
 		optparse;
@@ -10,7 +10,7 @@ Dependence:
 		bamsignals;
 		GenomicFeatures;
 
-*Usage: Rscript PGEP.R -h*
+Usage: *Rscript PGEP.R -h*
 
 Options:
 
@@ -33,5 +33,5 @@ Options:
 		Show this help message and exit
 		
 Example:
-	*Rscript PGEP.R  -b bam_file_director/ -g genome.gtf -e gene_expression.txt -o outfile_name -m LR*
+    *Rscript PGEP.R  -b bam_file_director/ -g genome.gtf -e gene_expression.txt -o outfile_name -m LR*
 
