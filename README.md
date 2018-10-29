@@ -10,7 +10,7 @@ Dependence:
 		bamsignals;
 		GenomicFeatures;
 
-*Usage: Rscript PGEP.R -h
+*Usage: Rscript PGEP.R -h*
 
 Options:
 
@@ -33,5 +33,5 @@ Options:
 		Show this help message and exit
 		
 Example:
-	*Rscript PGEP.R  -b bam_file_director/ -g genome.gtf -e gene_expression.txt -o outfile_name -m LR
+	*Rscript PGEP.R  -b bam_file_director/ -g genome.gtf -e gene_expression.txt -o outfile_name -m LR*
 
