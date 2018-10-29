@@ -3,12 +3,12 @@
 
 Function: This script is to predicte gene expression level based on chromain modification or transcription factor binding infomation. It was purely written by R.
 
-**Dependence:**   	
-		optparse;  
-		e1071;  
-		randomForest;  
-		bamsignals;  
-		GenomicFeatures;  
+**Dependence:**  
+	optparse;  
+	e1071;  
+	randomForest;  
+	bamsignals;  
+	GenomicFeatures;  
 
 Usage: *Rscript PGEP.R -h*
 
