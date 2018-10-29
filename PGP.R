@@ -6,13 +6,15 @@
 # row strand for a gene, each column is a histone moidification
 
 # example
-# USAGE:  anova.r -i bam_files_director -o output file name
+# USAGE:  Rscript PGEP.r -b bam_files_director -o output_file_name
 
 # parameters
 # Options
 # -i/--input  bam file directers
+# -e/--gene gene expresison file  
 # -g/--gtf  gtf file
 # -o/--output output name
+# -m/--method ML
 
 options(warn = -1)
 
