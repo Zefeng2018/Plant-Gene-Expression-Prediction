@@ -15,7 +15,7 @@ Function: This script is to predicte gene expression level based on chromain mod
 
 	Rscript PGEP.R -h
 
-Options:
+**Options:**
 
 	-b CHARACTER, --bams=CHARACTER
 		Input bam files directory
@@ -35,7 +35,7 @@ Options:
 	-h, --help
 		Show this help message and exit
 		
-Example:
+**Example:**
     
-    Rscript PGEP.R  -b bam_file_director/ -g genome.gtf -e gene_expression.txt -o outfile_name -m LR*
+    Rscript PGEP.R  -b bam_file_director/ -g genome.gtf -e gene_expression.txt -o outfile_name -m LR
 
