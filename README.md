@@ -42,9 +42,9 @@ Function: This script is to predicte gene expression level based on chromain mod
 **Output file 1 (example): Predictive and orignial mesured gene expression levels (log2)**
 
     predicted	    measured	    method
-    0.965	2.438    LR
-    5.107	8.860    LR
-    3.4475	3.070    LR
+    0.965	2.438	LR
+    5.107	8.860	LR
+    3.4475	3.070	LR
     ...
     3.422	2.377	LR
     4.914	5.545	LR
@@ -53,12 +53,12 @@ Function: This script is to predicte gene expression level based on chromain mod
 ** Output file2 (example): PCC for 10-fold cross validation)**
 
     0.79	LR
-    0.8		LR
+    0.8	LR
     0.81	LR
     0.79	LR
     0.81	LR
     0.79	LR
     0.79	LR
-    0.8		LR
-    0.8		LR
+    0.8	LR
+    0.8	LR
     0.79	LR
