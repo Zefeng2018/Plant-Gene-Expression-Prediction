@@ -35,7 +35,7 @@ Function: This script is to predicte gene expression level based on chromain mod
 	-h, --help
 		Show this help message and exit
 		
-**Example:**
+**Command line example:**
     
     Rscript PGEP.R  -b bam_file_director/ -g genome.gtf -e gene_expression.txt -o outfile_name -m LR
     
@@ -53,12 +53,12 @@ Function: This script is to predicte gene expression level based on chromain mod
 **Output file2 (example): PCC for 10-fold cross validation)**
 
     0.79	LR
-    0.8	LR
+    0.80	LR
     0.81	LR
     0.79	LR
     0.81	LR
     0.79	LR
     0.79	LR
-    0.8	LR
-    0.8	LR
+    0.80	LR
+    0.80	LR
     0.79	LR
