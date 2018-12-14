@@ -50,7 +50,7 @@ Function: This script is to predicte gene expression level based on chromain mod
     4.914	5.545	LR
     4.770	3.806	LR
 
-** Output file2 (example): PCC for 10-fold cross validation)**
+**Output file2 (example): PCC for 10-fold cross validation)**
 
     0.79	LR
     0.8	LR
