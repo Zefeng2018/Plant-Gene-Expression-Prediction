@@ -1,7 +1,7 @@
 # Plant Gene Expression Prediction (PGEP)
 
 
-Function: This script is to predicte gene expression level based on chromain modification or transcription factor binding infomation. It was purely written by R.
+Function: This script is to predicte gene expression level based on chromain modification or transcription factor binding infomation. It was purely written by R. 
 
 **Workflow of the script** 
 ![image](https://github.com/Zefeng2018/Plant-Gene-Expression-Prediction/raw/master/workflow.png)
