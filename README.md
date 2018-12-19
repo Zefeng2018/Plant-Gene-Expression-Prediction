@@ -28,7 +28,7 @@ Function: This script is to predict gene expression level based on chromain modi
 		Input the gtf file
 
 	-e CHARACTER, --expression=CHARACTER
-		Input gene expression
+		Input gene expression file
 
 	-m CHARACTER, --method=CHARACTER
 		Input predictive model (LR: linear regression; RF: random forest; SVR: support vector regresison)
