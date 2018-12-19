@@ -55,7 +55,7 @@ if (TRUE){
                 help = "Input the gtf file", metavar = 'character'),
     
     make_option(c("-e", "--expression", type = "character",default = NULL),
-                help = "Input gene expression", metavar = 'character'),
+                help = "Input gene expression file", metavar = 'character'),
     
     make_option(c("-m", "--method", type = "character",default = NULL),
                 help = "Input predictive model (LR: linear regression; RF: random forest; SVR: support vector regresison)", metavar = 'character'),
