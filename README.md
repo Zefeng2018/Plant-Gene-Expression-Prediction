@@ -7,7 +7,7 @@ Function: This script is to predict gene expression level based on chromain modi
 ![image](https://github.com/Zefeng2018/Plant-Gene-Expression-Prediction/raw/master/workflow.png)
 
 
-**Dependence:**  
+**Dependence of R package:**  
 	
 	optparse;  
 	e1071;  
