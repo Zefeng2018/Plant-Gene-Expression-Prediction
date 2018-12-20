@@ -2,8 +2,8 @@
 
 # 1. Main Functions and Steps:
 
-# Functions： Read alignment files directions contaning  alignment files (*.bam file), gtf file to convert them into read counts matrix where each
-# row strand for a gene, each column is a histone moidification
+# Functions： Read alignment files director contaning chromain modification alignment files (*.bam file), genomic annotation (.gtf) file and gene expression (table) file.Then it converts them into normalized read counts matrix where each
+# row stands for a gene while each column is the chromatin moidification intensity. Then, machine learning methods are used to model gene expression based on the levels of those chromatin modifications.
 
 # example
 # USAGE:  Rscript PGEP.r -b bam_files_director -o output_file_name
@@ -14,7 +14,7 @@
 # -e/--gene gene expresison file  
 # -g/--gtf  gtf file
 # -o/--output output name
-# -m/--method ML
+# -m/--method ML, RF or SVR
 
 options(warn = -1)
 
@@ -113,13 +113,13 @@ Getgenes<-function(gtf_file){
 
 genes<-Getgenes(opts$gtf)
 
-###### calculate normalized tag counts of X(ij) for gene i, hitone mark j  in give region for gene  
+###### calculate normalized tag counts of X(ij) for gene i, histone mark j  in given region  
 #######
 
 Normalized_tag_counts_genes<-function(region_gr,bampath){
   require(bamsignals)
   bc<-bamCount(bampath, region_gr, mapqual = 0, paired.end = c("ignore"), tlenFilter = NULL,verbose = FALSE)
-  bc<-(bc*1e6*1000/sum(bc))/width(region_gr) # fpkm
+  bc<-(bc*1e6*1000/sum(bc))/width(region_gr) # FPKM
   
   
   df<-data.frame(rc=bc)
@@ -135,7 +135,7 @@ Get_marks_from_filenames<-function(peak_file_name){
   return(mark_name)
 }
 
-##### initiate empty  df and get all histone noralized read info
+##### initiate a data frame and add the the histone modification level for each gene (normalized by FPKM)
 
 histone_df<-data.frame(matrix(nrow = length(genes)))
 rownames(histone_df)<-names(genes)
@@ -157,18 +157,20 @@ for (file in file_list){
 
 histone_df<-histone_df[-1] ## all gene 
 
-genes_expression<-read.table(opts$expression,header = TRUE,stringsAsFactors = FALSE) # (best rna-seq)
+#load expression data
+genes_expression<-read.table(opts$expression,header = TRUE,stringsAsFactors = FALSE)
 
 ## common genes in both gtf and gene expression
 common_genes<-intersect(rownames(histone_df),rownames(genes_expression))
 genes_expression<-genes_expression[common_genes,]
 
-histone_df2<-histone_df[rownames(genes_expression),]  # genes with expression used in following analysis
+# genes with expression used in following analysis
+histone_df2<-histone_df[rownames(genes_expression),]  
 
 #apply(histone_df2,2,function(x) cor(log(genes_expression$leaf1+1),log(x+1)))
 
 
-### cross validation for d2 data (add the pesudo counts derived from d1 data)
+### log2 transformation and perform cross validation
 d2_histone<- log(histone_df2+1,2)
 d2_exp<-data.frame(leaf=log((genes_expression$leaf1+genes_expression$leaf2+genes_expression$leaf3)/3+1,2))
 d2_data<- cbind(d2_histone,d2_exp) #***####used to cross validation  (triaining and test data)
@@ -220,10 +222,11 @@ write.table(data1,file=paste(opts$output,".cv",sep=""),row.names = FALSE,
 
 }
 
- ### rnadom foresrt
+ ### random forest regression
 
 if (opts$method == "RF"){
-cross_validations_cor<-c()  # record each cor
+# record each correlation coefficient
+cross_validations_cor<-c()  
 predicted_ten_fold<-c()
 measured_ten_fold<-c()
 
@@ -231,7 +234,7 @@ for(k in 1:nrFolds) {
   fold <- which(folds == k)
   data.train <- d2_data[-fold,]
   data.test <- d2_data[fold,]
-  #message(dim(data.train),"**",dim(data.test)) # 90% used to train, 10% used to validate
+  #message(dim(data.train),"**",dim(data.test)) # 90% used to train, 10% used to validate or predict
   model<-randomForest(leaf ~ ., data=data.train,importance = TRUE, proximity = FALSE, ntree = 200)
   predictions<-predict(model,data.test)
   predicted_ten_fold<-c(predicted_ten_fold,predictions)
@@ -255,7 +258,7 @@ write.table(data1,file=paste(opts$output,".cv",sep=""),row.names = FALSE,
             append = TRUE)
 
 }
-
+### support vector regression
 if (opts$method == "SVR"){
 cross_validations_cor<-c()  # record each cor
 predicted_ten_fold<-c()
