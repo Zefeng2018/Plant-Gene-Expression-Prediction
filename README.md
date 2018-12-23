@@ -49,6 +49,7 @@ The file director (-b options) containing alignment files (.bam) shoud be named 
 1. Histone modifications data from ChIP-Seq should be named as, e.g., H3K4me3.bam.
 2. DHS data should be named as e.g., DNaseI.bam.
 3. Transcription factors data from ChIP-Seq should be named as TF's name, e.g., AT1G22640.bam.
+
 Notes: all the .bam files shoud be indexed using samtools under same director before using this script.
     
 **Output file 1 (example): Predictive and orignial mesured gene expression levels (log2)**
