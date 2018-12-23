@@ -7,7 +7,7 @@ Function: This script is to predict gene expression level based on chromain modi
 ![image](https://github.com/Zefeng2018/Plant-Gene-Expression-Prediction/raw/master/workflow.png)
 
 
-**Dependence of R package:**  
+## **Dependence of R package:**  
 	
 	optparse;  
 	e1071;  
@@ -15,11 +15,11 @@ Function: This script is to predict gene expression level based on chromain modi
 	bamsignals;  
 	GenomicFeatures;  
 
-**Usage:**  
+## **Usage:**  
 
 	Rscript PGEP.R -h
 
-**Options:**
+## **Options:**
 
 	-b CHARACTER, --bams=CHARACTER
 		Input bam files directory
@@ -39,11 +39,11 @@ Function: This script is to predict gene expression level based on chromain modi
 	-h, --help
 		Show this help message and exit
 		
-**Command line example:**
+## **Command line example:**
     
     Rscript PGEP.R  -b bam_file_director/ -g genome.gtf -e gene_expression.txt -o outfile_name -m LR
     
-**:exclamation:Input request**
+## **:exclamation:Input request**
 
 _The alignment files (.bam files) contained in the file director (-b options) shoud be named as follows:_
 1. Histone modifications data from ChIP-Seq should be named as, e.g., H3K4me3.bam.
@@ -53,7 +53,7 @@ _The alignment files (.bam files) contained in the file director (-b options) sh
 Notes: all the .bam files shoud be indexed using samtools under same director before using this script.
 
 
-**Output file 1 (example): Predictive and orignial mesured gene expression levels (log2)**
+## **Output file 1 (example): Predictive and orignial mesured gene expression levels (log2)**
 
     predicted	    measured	    method
     0.965	2.438	LR
@@ -64,7 +64,7 @@ Notes: all the .bam files shoud be indexed using samtools under same director be
     4.914	5.545	LR
     4.770	3.806	LR
 
-**Output file2 (example): PCC for 10-fold cross validation)**
+## **Output file2 (example): PCC for 10-fold cross validation)**
 
     0.79	LR
     0.80	LR
@@ -76,7 +76,7 @@ Notes: all the .bam files shoud be indexed using samtools under same director be
     0.80	LR
     0.80	LR
     0.79	LR
-** Other files**
+## ** Other files**
 Predict_matrix.RData: this file is the data matrix (an R data object) prepared beforehand that can be directly used as the input of prediction models.
 
 
