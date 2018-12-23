@@ -3,7 +3,7 @@
 
 Function: This script is to predict gene expression level based on chromain modification or transcription factor binding infomation. It was purely written by R. 
 
-##**Workflow of the script**##
+## **Workflow of the script**
 ![image](https://github.com/Zefeng2018/Plant-Gene-Expression-Prediction/raw/master/workflow.png)
 
 
