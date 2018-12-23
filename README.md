@@ -53,7 +53,7 @@ _The alignment files (.bam files) contained in the file director (-b options) sh
 Notes: all the .bam files shoud be indexed using samtools under same director before using this script.
 
 
-## **Output file 1 (example): Predictive and orignial mesured gene expression levels (log2)**
+## **Output file 1 : Predictive and orignial mesured gene expression levels (log2)**
 
     predicted	    measured	    method
     0.965	2.438	LR
@@ -64,7 +64,7 @@ Notes: all the .bam files shoud be indexed using samtools under same director be
     4.914	5.545	LR
     4.770	3.806	LR
 
-## **Output file2 (example): PCC for 10-fold cross validation)**
+## **Output file2 : PCC for 10-fold cross validation)**
 
     0.79	LR
     0.80	LR
