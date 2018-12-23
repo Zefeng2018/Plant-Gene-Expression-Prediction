@@ -77,7 +77,7 @@ Notes: all the .bam files shoud be indexed using samtools under same director be
     0.80	LR
     0.79	LR
 ## **Other files**
-Predict_matrix.RData: this file is the data matrix (an R data object) prepared beforehand that can be directly used as the input of prediction models.
-
+1. Predict_matrix.RData: this file is the data matrix (an R data object) prepared beforehand that can be directly used as the input of prediction models.
+2. Arabidopsis_rice_orthologs_list.txt：This file contains the orthologous gene paris for Arabidopsis and rice
 
 
