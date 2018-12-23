@@ -43,6 +43,14 @@ Function: This script is to predict gene expression level based on chromain modi
     
     Rscript PGEP.R  -b bam_file_director/ -g genome.gtf -e gene_expression.txt -o outfile_name -m LR
     
+**Input request
+
+The file director (-b options) containing alignment files (.bam) shoud be named as follows:
+1. Histone modifications data from ChIP-Seq should be named as, e.g., H3K4me3.bam.
+2. DHS data should be named as e.g., DNaseI.bam.
+3. Transcription factors data from ChIP-Seq should be named as TF's name, e.g., AT1G22640.bam.
+Notes: all the .bam files shoud be indexed using samtools under same director before using this script.
+    
 **Output file 1 (example): Predictive and orignial mesured gene expression levels (log2)**
 
     predicted	    measured	    method
@@ -66,3 +74,8 @@ Function: This script is to predict gene expression level based on chromain modi
     0.80	LR
     0.80	LR
     0.79	LR
+** Other files**
+Predict_matrix.RData: this file is the data matrix (an R data object) prepared beforehand that can be directly used as the input of prediction models.
+
+
+
