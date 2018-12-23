@@ -45,7 +45,7 @@ Function: This script is to predict gene expression level based on chromain modi
     
 **:exclamation:Input request**
 
-The alignment files (.bam files) contained in the file director (-b options) shoud be named as follows:
+_The alignment files (.bam files) contained in the file director (-b options) shoud be named as follows:_
 1. Histone modifications data from ChIP-Seq should be named as, e.g., H3K4me3.bam.
 2. DHS data should be named as e.g., DNaseI.bam.
 3. Transcription factors data from ChIP-Seq should be named as TF's name, e.g., AT1G22640.bam.
