@@ -41,16 +41,16 @@ Function: This script is to predict gene expression level based on chromain modi
 		
 ## **Command line example:**
     
-    Rscript PGEP.R  -b bam_file_director/ -g genome.gtf -e gene_expression.txt -o outfile_name -m LR
+    Rscript PGEP.R  -b bam_file_directory/ -g genome.gtf -e gene_expression.txt -o outfile_name -m LR
     
 ## **:exclamation:Input request**
 
-_The alignment files (.bam files) contained in the file director (-b options) shoud be named as follows:_
+_The alignment files (.bam files) contained in the file directory (-b options) shoud be named as follows:_
 1. Histone modifications data from ChIP-Seq should be named as, e.g., H3K4me3.bam.
 2. DHS data should be named as e.g., DNaseI.bam.
 3. Transcription factors data from ChIP-Seq should be named as TF's name, e.g., AT1G22640.bam.
 
-Notes: all the .bam files shoud be indexed using samtools under same director before using this script.
+Notes: all the .bam files shoud be indexed using samtools under same directory before using this script.
 
 
 ## **Output file 1 : Predicted and original measured gene expression levels (log2)**
@@ -79,6 +79,6 @@ Notes: all the .bam files shoud be indexed using samtools under same director be
 ## **Other files**
 1. Predict_matrix.RData: this file is the data matrix (an R data object) prepared beforehand that can be directly used as the input of prediction models.
 2. Arabidopsis_rice_orthologs_list.txt：This file contains the orthologous gene paris between Arabidopsis and rice.
-3. example_data is the director containing some examples of alignment files.
+3. example_data is the directory containing some examples of alignment files.
 
 
