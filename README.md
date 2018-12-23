@@ -43,7 +43,7 @@ Function: This script is to predict gene expression level based on chromain modi
     
     Rscript PGEP.R  -b bam_file_director/ -g genome.gtf -e gene_expression.txt -o outfile_name -m LR
     
-**Input request
+**Input request**
 
 The file director (-b options) containing alignment files (.bam) shoud be named as follows:
 1. Histone modifications data from ChIP-Seq should be named as, e.g., H3K4me3.bam.
