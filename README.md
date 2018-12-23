@@ -64,7 +64,7 @@ Notes: all the .bam files shoud be indexed using samtools under same directory b
     4.914	5.545	LR
     4.770	3.806	LR
 
-## **Output file2 : PCC for 10-fold cross validation)**
+## **Output file2 : PCCs from 10-fold cross validation**
 
     0.79	LR
     0.80	LR
