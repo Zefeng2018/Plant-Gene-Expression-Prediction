@@ -81,6 +81,4 @@ Notes: all the .bam files shoud be indexed using samtools under same directory b
 2. Arabidopsis_rice_orthologs_list.txt：This file contains the orthologous gene paris between Arabidopsis and rice.
 3. example_data is the directory containing some examples of alignment files.
 
-### Vistor statistics
 
-<script type="text/javascript" src="//ra.revolvermaps.com/0/0/7.js?i=0ypfp1eocyh&amp;m=0&amp;c=ff0000&amp;cr1=ffffff&amp;sx=0" async="async"></script>
