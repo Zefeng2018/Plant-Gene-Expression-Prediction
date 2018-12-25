@@ -28,13 +28,15 @@ SRR1848405
     cd 1fastq
     for m in $(ls *.fastq); do echo $m; fastqc $m  -o ../2fastqc; done
 
-## 4 Reads filter by Trimmomatic tool. (one may use an alternative tool to perform reads quality filtering)
+## 4 Reads filter by Trimmomatic tool.
 ### paired-end read
     cd ../1fastq 
     for m in $(ls *.fastq ); do java -jar ~/mysoft/Trimmomatic-0.36/trimmomatic-0.36.jar PE -threads 7 $m_1.fastq $m_2.fastq  ../3filtered_fq/$m_1.paired.fastq ../3filtered_fq/$m_1.unpaired.fastq ../3filtered_fq/$m_2.paired.fastq ../3filtered_fq/$m_2.unpaired.fastq ILLUMINACLIP:~/mysoft/Trimmomatic-0.36/adapters/my_adapter.fa:2:30:10 LEADING:3 TRAILING:3 SLIDINGWINDOW:4:15 MINLEN:100
     
 ### (or) single-end reads
     for m in $(ls *.fastq ); do java -jar ~/mysoft/Trimmomatic-0.36/trimmomatic-0.36.jar SE -threads 7 $m  ../3filtered_fq/$m_filtered.fastq  ILLUMINACLIP:/home/wuzefeng/mysoft/Trimmomatic-0.36/adapters/TruSeq9-SE.fa:2:30:10 LEADING:3 TRAILING:3 SLIDINGWINDOW:4:15 MINLEN:100
+
+NOTE: one may select an alternative tool in this step.
 
 ## 5.bowtie2 mapping
     cd ../3filtered_fq/
