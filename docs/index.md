@@ -63,8 +63,6 @@ NOTE: one may select an alternative tool in this step.
     macs2 callpeak -t H3K4me3.bam -c input.bam -f BAM -g 1.2e8 -n H3K4me3.bam -B --SPMR  --broad --broad-cutoff 0.1  --outdir ../8macs2/broad  # broad peaks
 
 
-### Vistor statistics
-
 <script type="text/javascript" src="//ra.revolvermaps.com/0/0/7.js?i=0ypfp1eocyh&amp;m=0&amp;c=ff0000&amp;cr1=ffffff&amp;sx=0" async="async"></script>
 
 
