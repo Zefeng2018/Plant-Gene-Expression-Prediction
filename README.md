@@ -80,5 +80,5 @@ Notes: all the .bam files shoud be indexed using samtools under same directory b
 1. Predict_matrix.RData: this file is the data matrix (an R data object) prepared beforehand that can be directly used as the input of prediction models.
 2. Arabidopsis_rice_orthologs_list.txt：This file contains the orthologous gene paris between Arabidopsis and rice.
 3. example_data is the directory containing some examples of alignment files.
-4. The workflo of ChIP-Seq data analysis can be found in https://zefeng2018.github.io/Plant-Gene-Expression-Prediction/
+4. The workflow of ChIP-Seq data analysis can be found in https://zefeng2018.github.io/Plant-Gene-Expression-Prediction/
 
