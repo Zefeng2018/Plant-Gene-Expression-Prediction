@@ -12,13 +12,14 @@ A general framework to analysis the ChIP-Seq data.It mainly includes the downloa
     for m in $(cat download.txt); do if [ ! -e $(basename $m) ]; then echo $m; ascp -i ~/.aspera/connect/etc/asperaweb_id_dsa.openssh -k 1 -QT -l 200m anonftp@ftp-trace.ncbi.nlm.nih.gov:$m .; fi; done
 
 NOTE: the download.txt file should contain the sra id list, with each sra id is a separate line, e.g.,  
-SRR1509474  
-SRR1509472  
-SRR1509477  
-SRR2637923  
-SRR2637924  
-SRR2637925  
-SRR1848405  
+
+    SRR1509474  
+    SRR1509472  
+    SRR1509477  
+    SRR2637923  
+    SRR2637924  
+    SRR2637925  
+    SRR1848405  
 
 ## 2. Extract fastq files from sra data
     for sra in $(ls *.sra); do fastq-dump $m --split-files -O 1fastq;done   #used for paired-end sequenced data
