@@ -50,7 +50,7 @@ NOTE: one may select an alternative tool in this step.
     cd ../4sam/
     for m in $(ls *.sam); do samtools view -Sh $m | grep -e "^@" -e "XM:i:[012][^0-9]" | grep -v "XS:i:" > ../5uniq_sam/$m.uniq.sam;done
 
-## 7. Sorting alignemnt (.sam) file and convert to (.bam) files
+## 7. Sorting alignment (.sam) file and convert to (.bam) files
     cd ../5uniq_sam
     for  m in $(ls *.sam); do  picard-tools SortSam  INPUT=$m OUTPUT=../6sorted_bam/$m.sorted.bam SO=coordinate; done
 
